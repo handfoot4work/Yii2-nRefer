@@ -1,0 +1,214 @@
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: "\e151";
+}
+
+a.desc:after {
+    content: "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view td {
+    white-space: nowrap;
+}
+
+.grid-view .filters input,
+.grid-view .filters select {
+    min-width: 50px;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav > li > form {
+    padding: 8px;
+}
+
+@media(max-width:768px) {
+	.nav li > form {
+	    padding: 3px;
+	}
+}
+
+.nav > li > form > button:hover {
+    text-decoration: none;
+}
+
+.navbar-nrefer {
+  background-color: #292;
+  border-color: #00c926;
+}
+.navbar-nrefer .navbar-brand {
+  color: #fdfdfd;
+}
+.navbar-nrefer .navbar-brand:hover,
+.navbar-nrefer .navbar-brand:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-nrefer .navbar-text {
+  color: #fdfdfd;
+}
+.navbar-nrefer .navbar-nav > li > a {
+  color: #fdfdfd;
+}
+.navbar-nrefer .navbar-nav > li > a:hover,
+.navbar-nrefer .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-nrefer .navbar-nav > .active > a,
+.navbar-nrefer .navbar-nav > .active > a:hover,
+.navbar-nrefer .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #00c926;
+}
+.navbar-nrefer .navbar-nav > .disabled > a,
+.navbar-nrefer .navbar-nav > .disabled > a:hover,
+.navbar-nrefer .navbar-nav > .disabled > a:focus {
+  color: #444;
+  background-color: transparent;
+}
+.navbar-nrefer .navbar-toggle {
+  border-color: #333;
+}
+.navbar-nrefer .navbar-toggle:hover,
+.navbar-nrefer .navbar-toggle:focus {
+  background-color: #333;
+}
+.navbar-nrefer .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-nrefer .navbar-collapse,
+.navbar-nrefer .navbar-form {
+  border-color: #00c926;
+}
+.navbar-nrefer .navbar-nav > .open > a,
+.navbar-nrefer .navbar-nav > .open > a:hover,
+.navbar-nrefer .navbar-nav > .open > a:focus {
+  color: #fff;
+  background-color: #00c926;
+}
+@media (max-width: 767px) {
+  .navbar-nrefer .navbar-nav .open .dropdown-menu > .dropdown-header {
+    border-color: #00c926;
+  }
+  .navbar-nrefer .navbar-nav .open .dropdown-menu .divider {
+    background-color: #00c926;
+  }
+  .navbar-nrefer .navbar-nav .open .dropdown-menu > li > a {
+    color: #9d9d9d;
+  }
+  .navbar-nrefer .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-nrefer .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #fff;
+    background-color: transparent;
+  }
+  .navbar-nrefer .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-nrefer .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-nrefer .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #fff;
+    background-color: #00c926;
+  }
+  .navbar-nrefer .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-nrefer .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-nrefer .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #444;
+    background-color: transparent;
+  }
+}
+.navbar-nrefer .navbar-link {
+  color: #9d9d9d;
+}
+.navbar-nrefer .navbar-link:hover {
+  color: #fff;
+}
+.navbar-nrefer .btn-link {
+  color: #9d9d9d;
+}
+.navbar-nrefer .btn-link:hover,
+.navbar-nrefer .btn-link:focus {
+  color: #fff;
+}
+.navbar-nrefer .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-nrefer .btn-link:hover,
+.navbar-nrefer .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-nrefer .btn-link:focus {
+  color: #444;
+}
