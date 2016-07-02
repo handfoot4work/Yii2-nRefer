@@ -111,8 +111,8 @@ a.desc:after {
 }
 
 .navbar-nrefer {
-  background-color: #292;
-  border-color: #00c926;
+  background-color: #006838;
+  border-color: #006838;
 }
 .navbar-nrefer .navbar-brand {
   color: #fdfdfd;
@@ -126,7 +126,7 @@ a.desc:after {
   color: #fdfdfd;
 }
 .navbar-nrefer .navbar-nav > li > a {
-  color: #fdfdfd;
+  color: #ffffff;
 }
 .navbar-nrefer .navbar-nav > li > a:hover,
 .navbar-nrefer .navbar-nav > li > a:focus {
@@ -137,7 +137,7 @@ a.desc:after {
 .navbar-nrefer .navbar-nav > .active > a:hover,
 .navbar-nrefer .navbar-nav > .active > a:focus {
   color: #fff;
-  background-color: #00c926;
+  background-color: #0F4F1B;
 }
 .navbar-nrefer .navbar-nav > .disabled > a,
 .navbar-nrefer .navbar-nav > .disabled > a:hover,
@@ -153,7 +153,7 @@ a.desc:after {
   background-color: #333;
 }
 .navbar-nrefer .navbar-toggle .icon-bar {
-  background-color: #fff;
+  background-color: #005B33;
 }
 .navbar-nrefer .navbar-collapse,
 .navbar-nrefer .navbar-form {
@@ -163,7 +163,7 @@ a.desc:after {
 .navbar-nrefer .navbar-nav > .open > a:hover,
 .navbar-nrefer .navbar-nav > .open > a:focus {
   color: #fff;
-  background-color: #00c926;
+  background-color: #005B33;
 }
 @media (max-width: 767px) {
   .navbar-nrefer .navbar-nav .open .dropdown-menu > .dropdown-header {
@@ -173,7 +173,7 @@ a.desc:after {
     background-color: #00c926;
   }
   .navbar-nrefer .navbar-nav .open .dropdown-menu > li > a {
-    color: #9d9d9d;
+    color: #0F4F1B;
   }
   .navbar-nrefer .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-nrefer .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -189,18 +189,18 @@ a.desc:after {
   .navbar-nrefer .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-nrefer .navbar-nav .open .dropdown-menu > .disabled > a:hover,
   .navbar-nrefer .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #444;
+    color: #0F4F1B;
     background-color: transparent;
   }
 }
 .navbar-nrefer .navbar-link {
-  color: #9d9d9d;
+  color: #0F4F1B;
 }
 .navbar-nrefer .navbar-link:hover {
   color: #fff;
 }
 .navbar-nrefer .btn-link {
-  color: #9d9d9d;
+  color: #0F4F1B;
 }
 .navbar-nrefer .btn-link:hover,
 .navbar-nrefer .btn-link:focus {
@@ -210,5 +210,5 @@ a.desc:after {
 fieldset[disabled] .navbar-nrefer .btn-link:hover,
 .navbar-nrefer .btn-link[disabled]:focus,
 fieldset[disabled] .navbar-nrefer .btn-link:focus {
-  color: #444;
+  color: #0F4F1B;
 }
