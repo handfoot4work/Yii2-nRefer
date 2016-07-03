@@ -82,7 +82,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <?php
                                 echo Typeahead::widget([
                                     'name' => 'register-form[hcode]',
-                                    'options' => ['placeholder' => 'select office ...', 'class'=>"form-control",'required'=>true],
+                                    'options' => ['placeholder' => 'กรุณาเลือกหน่วยงาน...', 'class'=>"form-control",'required'=>true],
                                     'pluginOptions' => ['highlight'=>true],
                                     'id'=>'register-form-hcode',
                                     'dataset' => [

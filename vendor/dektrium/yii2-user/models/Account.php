@@ -16,6 +16,7 @@ use dektrium\user\Finder;
 use dektrium\user\models\query\AccountQuery;
 use dektrium\user\traits\ModuleTrait;
 use yii\authclient\ClientInterface as BaseClientInterface;
+
 use yii\db\ActiveRecord;
 use yii\helpers\Json;
 use yii\helpers\Url;
