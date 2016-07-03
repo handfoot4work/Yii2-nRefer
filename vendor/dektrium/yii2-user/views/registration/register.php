@@ -66,14 +66,6 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?= $form->field($model, 'position_level')->textInput(["placeholder"=>"ชำนาญการ, ชำนาญงาน"]) ?>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'tel_office')->textInput(["placeholder"=>"9-999-9999 ต่อ 9999"]) ?>
-                    </div>
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'tel_mobile') ?>
-                    </div>
-                </div>
 
                 <div class="row">
                     <div class="col-md-12">
@@ -102,6 +94,16 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                     </div>
                 </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <?= $form->field($model, 'tel_office')->textInput(["placeholder"=>"9-999-9999 ต่อ 9999"]) ?>
+                    </div>
+                    <div class="col-md-6">
+                        <?= $form->field($model, 'tel_mobile') ?>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-md-12">
                         <?= $form->field($model, 'email') ?>
