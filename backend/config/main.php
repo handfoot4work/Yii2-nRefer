@@ -14,6 +14,8 @@ return [
     'bootstrap' => ['log'],
     'components' => [
         'user' => [
+        //    'identityClass' => 'common\models\User',
+        //    'enableAutoLogin' => true,
             'identityClass' => 'dektrium\user\models\User',
             'enableAutoLogin' => false,
         ],
@@ -48,12 +50,16 @@ return [
             'bundles' => [
                 'dosamigos\google\maps\MapAsset' => [
                     'options' => [
-                        'key' => 'Input your Google API key',
+                        'key' => 'AIzaSyAhV9ttA2I55nbvkumnXag4fqjM11Bx4Zc',// ใส่ API ตรงนี้ครับ
                         //'language' => 'th',
                         'version' => '3.1.18'
                     ]
                 ]
             ]
+        ],
+        'session' => [
+            'name' => 'nReferBackend@MOPH',
+            //'savePath' => __DIR__ . '/../tmp',
         ],
     ],
     'modules' => [
@@ -66,6 +72,11 @@ return [
         ],
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
+            // enter optional module parameters below - only if you need to
+            // use your own export download action or custom translation
+            // message source
+            // 'downloadAction' => 'gridview/export/download',
+            // 'i18n' => []
         ],
         'admin' => [
             'class' => 'app\modules\admin\Module',

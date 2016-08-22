@@ -15,6 +15,7 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'user' => [
+//            'identityClass' => 'common\models\User',
             'identityClass' => 'dektrium\user\models\User',
             'enableAutoLogin' => false,
         ],
@@ -49,12 +50,16 @@ return [
             'bundles' => [
                 'dosamigos\google\maps\MapAsset' => [
                     'options' => [
-                        'key' => 'Input your Google API Key',
+                        'key' => 'AIzaSyAhV9ttA2I55nbvkumnXag4fqjM11Bx4Zc',// ใส่ API ตรงนี้ครับ
                         //'language' => 'th',
                         'version' => '3.1.18'
                     ]
                 ]
             ]
+        ],
+        'session' => [
+            'name' => 'nReferFrontend@MOPH',
+            //'savePath' => __DIR__ . '/../tmp',
         ],
     ],
     'modules' => [
@@ -67,7 +72,8 @@ return [
         ],
         'gii' => [
             'class' => 'yii\gii\Module',
-            'allowedIPs' => ['127.0.0.1', '::1','localhost'],
+            'allowedIPs' => ['127.0.0.1', '::1', 'nrefer.moph','localhost'],
+//            'password' => '123M456'
         ],
         'debug' => [
     		'class' => 'yii\debug\Module',
@@ -87,6 +93,11 @@ return [
         ],
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
+            // enter optional module parameters below - only if you need to
+            // use your own export download action or custom translation
+            // message source
+            // 'downloadAction' => 'gridview/export/download',
+            // 'i18n' => []
         ],
     ],
     'params' => $params,
