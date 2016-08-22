@@ -88,6 +88,7 @@ return [
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
         ],
+        'report' => ['class' => 'app\modules\report\Module',],
     ],
     'params' => $params,
 ];
