@@ -99,6 +99,7 @@ return [
             // 'downloadAction' => 'gridview/export/download',
             // 'i18n' => []
         ],
+        'report' => ['class' => 'app\modules\report\Module',],
     ],
     'params' => $params,
 ];
