@@ -140,6 +140,16 @@ echo GridView::widget([
             'pageSummary'=>true,
             'pageSummaryOptions'=>['class'=>'text-right text-info'],
         ],
+        [
+            'label'=>'(%) นอกเขต',
+            'value'=>function($data){ return ($data["cases"]-$data["inregion"])*100/$data["cases"] ;},
+            'format' => ['decimal',2],
+            'width'=>'80px',
+            'headerOptions' => ['style'=>'text-align:right'],
+            'contentOptions' => ['style'=>'text-align:right;','class'=>'info'],
+            'pageSummary'=>'',
+            'pageSummaryOptions'=>['class'=>'text-right text-info'],
+        ],
     ],
 ]);
 

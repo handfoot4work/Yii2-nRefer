@@ -93,7 +93,7 @@ echo GridView::widget([
             'headerOptions' => ['style'=>'text-align:center'],
         ],*/
         [
-            'label'=>'VisitNo',
+            'label'=>'Seq',
             'value'=> 'SEQ',
             'headerOptions' => ['style'=>'text-align:center'],
         ],
@@ -103,7 +103,7 @@ echo GridView::widget([
             'headerOptions' => ['style'=>'text-align:center'],
         ],
         [
-            'label'=>'เลขที่ Refer',
+            'label'=>'REFERID',
             'value'=> 'REFERID',
             'headerOptions' => ['style'=>'text-align:center'],
         ],
@@ -118,25 +118,25 @@ echo GridView::widget([
             'contentOptions' => ['style'=>'text-align:left;'],
         ],
         [
-            'label'=>'สาเหตุ',
+            'label'=>'CAUSEOUT',
             'value'=> function($data) use ($CauseOut) { return $CauseOut[$data['CAUSEOUT']];},
             'headerOptions' => ['style'=>'text-align:center'],
             'contentOptions' => ['style'=>'text-align:left;'],
         ],
         [
-            'label'=>'Pt Type',
+            'label'=>'PType',
             'value'=> function($data) use ($PtType) { return $PtType[$data['PTYPE']];},
             'headerOptions' => ['style'=>'text-align:center'],
             'contentOptions' => ['style'=>'text-align:left;'],
         ],
         [
-            'label'=>'Disease',
+            'label'=>'PTYPEDISC',
             'value'=>'PTYPEDISC',
             'headerOptions' => ['style'=>'text-align:center'],
             'contentOptions' => ['style'=>'text-align:center;'],
         ],
         [
-            'label'=>'เลขที่ Refer จ.',
+            'label'=>'REFERID_PROVINCE',
             'value'=> 'REFERID_PROVINCE',
             'headerOptions' => ['style'=>'text-align:center'],
             'contentOptions' => ['style'=>'text-align:center;'],

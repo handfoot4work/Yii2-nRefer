@@ -38,8 +38,8 @@ class ReportController extends Controller
         $Where .= $changwat==""? '':(' AND hosp.provcode="'.$changwat.'" ');
         $Sql = 'SELECT  "'.$date1.'" as date, c.zonecode as region,hosp.provcode,c.changwatname, '
                 . ' r.HOSPCODE as hcode,hosp.hosname as hname,count(*) as cases '
-                . ', sum(if(r.AN="" , 1 , 0 )) as opd '
-                . ', sum(if(r.AN="" , 0 , 1 )) as ipd '
+                . ', sum(if(r.AN="" OR ISNULL(r.AN) , 1 , 0 )) as opd '
+                . ', sum(if(r.AN="" OR ISNULL(r.AN) , 0 , 1 )) as ipd '
                 . ', sum(if(hosp.provcode=d.provcode , 1 , 0 )) as inprov '
                 . ', sum(if(c.zonecode=c2.zonecode , 1 , 0 )) as inregion '
                 . 'FROM '.$tablename.' r LEFT JOIN chospital_copy hosp ON r.HOSPCODE=hosp.hoscode '
@@ -87,6 +87,10 @@ class ReportController extends Controller
         } else {
             $date1 = isset($_GET["date1"])? $_GET["date1"]:date("Y-m-d");
             $date2 = isset($_GET["date2"])? $_GET["date2"]:date("Y-m-d");
+
+            $date1 = str_replace([" ",";"," or "],["","",""],$date1);
+            $date2 = str_replace([" ",";"],["",""],$date2);
+
         }
         $date1 = $date1==""? date("Y-m-d"):$date1;
         $date2 = $date2==""? date("Y-m-d"):$date2;
@@ -94,8 +98,8 @@ class ReportController extends Controller
         $Where = ' substr(r.D_UPDATE,1,10) BETWEEN "'.$date1.'" AND "'.$date2.'" AND length(r.HOSPCODE)=5 ';
         $Where .= $region==""? '':(' AND c.zonecode="'.$region.'" ');
         $Sql = 'SELECT  "'.$date1.'" as date1,"'.$date2.'" as date2, c.zonecode as region,hosp.provcode,c.changwatname ,count(*) as cases '
-                . ', sum(if(r.AN="" , 1 , 0 )) as opd '
-                . ', sum(if(r.AN="" , 0 , 1 )) as ipd '
+                . ', sum(if(r.AN="" OR ISNULL(r.AN) , 1 , 0 )) as opd '
+                . ', sum(if(r.AN="" OR ISNULL(r.AN) , 0 , 1 )) as ipd '
                 . ', sum(if(hosp.provcode=d.provcode , 1 , 0 )) as inprov '
                 . ', sum(if(c.zonecode=c2.zonecode , 1 , 0 )) as inregion '
                 . ' FROM '.$tablename.' r LEFT JOIN chospital_copy hosp ON r.HOSPCODE=hosp.hoscode '
@@ -153,8 +157,8 @@ class ReportController extends Controller
 
         $Where = ' substr(r.D_UPDATE,1,10) BETWEEN "'.$date1.'" AND "'.$date2.'" AND length(r.HOSPCODE)=5 ';
         $Sql = 'SELECT "'.$date1.'" as date1, "'.$date2.'" as date2, c.zonecode as region ,count(*) as cases '
-                . ', sum(if(r.AN="" , 1 , 0 )) as opd '
-                . ', sum(if(r.AN="" , 0 , 1 )) as ipd '
+                . ', sum(if(r.AN="" OR ISNULL(r.AN) , 1 , 0 )) as opd '
+                . ', sum(if(r.AN="" OR ISNULL(r.AN) , 0 , 1 )) as ipd '
                 . ', sum(if(hosp.provcode=d.provcode , 1 , 0 )) as inprov '
                 . ', sum(if(c.zonecode=c2.zonecode , 1 , 0 )) as inregion '
                 . ' FROM '.$tablename.' r LEFT JOIN chospital_copy hosp ON r.HOSPCODE=hosp.hoscode '
@@ -170,6 +174,9 @@ class ReportController extends Controller
         }
 
         $rawData = [];
+        $Cases = [];
+        $Cases["cases"] = 0;
+        $Cases["outregion"] = 0;
         foreach ($regions as $rc=>$region) {
             if (isset($Data[$region])) {
                 $rawData[$region] = $Data[$region];
@@ -177,7 +184,12 @@ class ReportController extends Controller
                 $rawData[$region] = ["date1"=> $date1,"date2"=> $date2, "region" => $region,"cases" => 0 ,
                     "opd" => 0, "ipd" => 0, "inprov" => 0 ,"inregion" => 0];
             }
+            $Cases["cases"] += $region["cases"];
+            $Cases["outregion"] += $region["cases"]-$region["inregion"];
         }
+
+        $Cases["percent"] = $Cases["cases"]==0? 0:($Cases["outregion"]*100/$Cases["cases"]);
+
         if (isset($_GET["ws"]) && $_GET["ws"]==true){
             return json_encode([
                     'success'=>true,
@@ -199,7 +211,8 @@ class ReportController extends Controller
                 'rawData'=>$rawData,
                 'date1'=>$date1,
                 'date2'=>$date2,
-                'regions'=>$regions
+                'regions'=>$regions,
+                'Cases'=>$Cases
             ]);
         }
 
