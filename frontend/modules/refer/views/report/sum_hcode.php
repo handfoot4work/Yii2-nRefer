@@ -20,7 +20,7 @@ echo GridView::widget([
     'panel' => [
         'heading'=>'<h2 class="panel-title"><a href="'.Url::to(['/refer/report/sum_prov','region'=>$region,'date1'=>$date1,'date2'=>$date2]).'"><i class="glyphicon glyphicon-circle-arrow-left"></i></a> ข้อมูลจากตาราง '.$tablename.' </h2>',
         'type' => GridView::TYPE_DEFAULT,
-        'before'=>'<form action="'.Url::to(['/refer/report/sum_hcode','region'=>$region]).'" method="post"><div class="col-md-2">'
+        'before'=>'<form action="'.Url::to(['/refer/report/sum_hcode','region'=>$region,'changwat'=>$changwat]).'" method="post"><div class="col-md-2">'
             . ' <input type="date" class="form-control" name="date1" value="'.$date1.'">'
             . ' </div><div class="col-md-2">'
             . ' <input type="date" class="form-control" name="date2" value="'.$date2.'">'
@@ -30,7 +30,7 @@ echo GridView::widget([
     ],
     'toolbar'=> [
         ['content'=>
-            Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['/refer/report/sum_hcode','region'=>$region,'changwat'=>$changwat,'date1'=>$date1,'date2'=>$date2], ['data-pjax'=>1, 'class'=>'btn btn-primary', 'title'=>'Refresh Grid'])
+            Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['/refer/report/sumhcode','region'=>$region,'changwat'=>$changwat,'date1'=>$date1,'date2'=>$date2], ['data-pjax'=>1, 'class'=>'btn btn-primary', 'title'=>'Refresh Grid'])
         ],
         'options' => ['class' => 'btn-group-sm'],
         '{export}',
