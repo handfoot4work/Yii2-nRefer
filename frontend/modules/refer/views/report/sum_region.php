@@ -22,7 +22,7 @@ echo GridView::widget([
     'panel' => [
         'heading'=>'<h2 class="panel-title"><i class="glyphicon glyphicon-user"></i> ข้อมูลจากตาราง '.$tablename.' </h2>',
         'type' => GridView::TYPE_DEFAULT,
-        'before'=>'<form method="post"><div class="col-md-2">'
+        'before'=>'<form action="'.Url::to(['/refer/report/sum_region']).'" method="post"><div class="col-md-2">'
             . ' <input type="date" class="form-control" name="date1" value="'.$date1.'">'
             . ' </div><div class="col-md-2">'
             . ' <input type="date" class="form-control" name="date2" value="'.$date2.'">'
@@ -32,7 +32,7 @@ echo GridView::widget([
     ],
     'toolbar'=> [
         ['content'=>
-            Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['/refer/report/sum_region','date1'=>$date1,'date2'=>$date2], ['data-pjax'=>1, 'class'=>'btn btn-primary', 'title'=>'Refresh Grid'])
+            Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['/refer/report/sumregion','date1'=>$date1,'date2'=>$date2], ['data-pjax'=>1, 'class'=>'btn btn-primary', 'title'=>'Refresh Grid'])
         ],
         'options' => ['class' => 'btn-group-sm'],
         '{export}',
@@ -52,7 +52,7 @@ echo GridView::widget([
             'value'=> function($data) use ($date1,$date2){
                 return (
                     $data["cases"]>0?
-                    Html::a($data['region'],['/refer/report/sum_prov','region'=>$data['region'],'date1'=>$date1,'date2'=>$date2] ):
+                    Html::a('เขตสุขภาพที่ '.($data['region']+0),['/refer/report/sum_prov','region'=>$data['region'],'date1'=>$date1,'date2'=>$date2] ):
                     $data['region']
                 );
             },
