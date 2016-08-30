@@ -40,10 +40,12 @@ AppAsset::register($this);
     $menuItems = [
         //['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'รายงาน', 'items'=>[
+            ['label' => 'สรุปรายปีงบประมาณ', 'url' => ['/report']],
+            '<li class="divider"></li>',
+            ['label' => 'สรุปตามช่วงวันที่'],
             ['label' => 'รายเขต', 'url' => ['/refer/report/sum_region?date='.date("Y-m-d")]],
             ['label' => 'รายจังหวัด', 'url' => ['/refer/report/sum_prov?date='.date("Y-m-d")]],
             ['label' => 'ราย รพ.', 'url' => ['/refer/report/sum_hcode?date='.date("Y-m-d")]],
-            ['label' => 'ทะเบียนการส่งข้อมูล รายวัน', 'url' => ['/refer/monitor/table?date='.date("Y-m-d")]],
         ]],
         ['label' => 'About', 'url' => ['/site/about']],
         Yii::$app->user->isGuest ?
