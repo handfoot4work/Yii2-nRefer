@@ -3,7 +3,6 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 
 $this->title = 'Web Service Logging';
-$this->params['breadcrumbs'][] = ['label'=>'Pharmacy', 'url'=>'/pharmacy'];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['breadcrumbs'][] = $rawData["ref"];
 
@@ -25,7 +24,7 @@ if ($rawData["type"]==1){
                         $Event .= '<tr><td>&nbsp; &nbsp; </td><td>'.$fld.':</td><td><table class="table">';
                         foreach ($data as $fld2 => $value2) {
                             foreach ($value2 as $fld3 => $value3) {
-                                $Event .= '<tr><td>&nbsp; &nbsp; </td><td>'.$fld3.'</td><td>'.$value3.'</td></tr>';
+                                $Event .= '<tr><td>&nbsp; &nbsp; </td><td>'.$fld3.'</td><td>'.nl2br($value3).'</td></tr>';
                             }
                         }
                         $Event .= '</table></td></tr>';

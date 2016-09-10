@@ -42,7 +42,8 @@ AppAsset::register($this);
         ['label' => 'Frontend', 'url' => Url::to('http://nrefer.moph.go.th')],
         !Yii::$app->user->isGuest ?
         ['label' => 'Monitoring', 'items'=>[
-            ['label' => 'Request Logging', 'url' => ['/report/log']],
+            ['label' => 'Request Logging - สรุป', 'url' => ['/report/log']],
+            ['label' => 'Request Logging - รายการ', 'url' => ['/report/log/list']],
         ]]:'',
         !Yii::$app->user->isGuest ?
         ['label' => 'Admin', 'items'=>[

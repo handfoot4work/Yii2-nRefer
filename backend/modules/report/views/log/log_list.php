@@ -5,7 +5,6 @@ use kartik\grid\GridView;
 use yii\widgets\ActiveForm;
 
 $this->title = 'Web Service Logging';
-$this->params['breadcrumbs'][] = ['label'=>'Pharmacy', 'url'=>'/pharmacy'];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['breadcrumbs'][] = date("Y-m-d H:i:s");
 
@@ -91,21 +90,15 @@ echo GridView::widget([
     'panel' => [
         'heading'=>'<h3 class="panel-title"><i class="fa fa-bars"></i> '.Html::encode($this->title).'</h3>',
         'type'=>'success',
-   //     'before'=>Html::a('<i class="glyphicon glyphicon-search"></i> Search', ['/pharmacy/lib/ipd'], ['class' => 'btn btn-success']),
-    //    'before'=>'<form method="post"><div class="col-md-2"><input type="text" name="drugname" class="form-control" value="'.$_POST["drugname"].'"></div> '.
-    //                    '<div class="col-md-1"><button type="submit" name="search" class="form-control btn-primary">'.
-    //                    '<i class="fa fa-search"></i> ค้น</button></div></form>',
-        //'after'=>Html::a('<i class="glyphicon glyphicon-repeat"></i> Reset Grid', ['index'], ['class' => 'btn btn-info']),
-    //    'after'=>'',
-    //    'footer'=>true,
+        'before'=>'',
     ],
     'toolbar' => [
+        ['content'=>
+            Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['/report/log/list','date'=>$date], ['data-pjax'=>1, 'class'=>'btn btn-primary', 'title'=>'List condition'])
+        ],
         '{export}',
         '{toggleData}'
     ],
 ]);
-//ActiveForm::end();
-/*echo GridView::widget([
-    'dataProvider'=>$dataProvider,
-]);
-*/
+?>
+<p class="alert alert-danger"><small><u>หมายเหตุ</u></small> ระบบเก็บ Log เริ่มวันที่ 9 กันยายน 2559</p>
