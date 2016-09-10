@@ -81,6 +81,12 @@ return [
         'admin' => [
             'class' => 'app\modules\admin\Module',
         ],
+        'report' => [
+            'class' => 'backend\modules\report\Modules',
+        ],
+        'monitor' => [
+            'class' => 'backend\modules\monitor\Modules',
+        ],
         'ws' => [
             'class' => 'app\modules\ws\Module',
         ],

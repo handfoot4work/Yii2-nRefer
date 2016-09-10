@@ -41,6 +41,10 @@ AppAsset::register($this);
     //    ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'Frontend', 'url' => Url::to('http://nrefer.moph.go.th')],
         !Yii::$app->user->isGuest ?
+        ['label' => 'Monitoring', 'items'=>[
+            ['label' => 'Request Logging', 'url' => ['/report/log']],
+        ]]:'',
+        !Yii::$app->user->isGuest ?
         ['label' => 'Admin', 'items'=>[
             ['label' => 'User Admin', 'url' => ['/user/admin/index']],
             ['label' => 'Refer Provider', 'url' => ['/admin/referprovider']],
