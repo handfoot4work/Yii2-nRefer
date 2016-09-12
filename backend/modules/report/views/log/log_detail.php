@@ -45,7 +45,7 @@ if ($rawData["type"]==1){
 
 <div class="panel panel-info">
     <div class="panel-heading">
-        <?=Html::a('<i class="fa fa-chevron-circle-left"></i>',['/report/log'])?> Log detail
+        <?=Html::a('<i class="fa fa-chevron-circle-left"></i>',['/report/log/list'])?> Log detail
     </div>
     <div class="panel-body">
         <table class="table">

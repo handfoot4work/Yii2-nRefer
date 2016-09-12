@@ -61,6 +61,8 @@ echo GridView::widget([
         'options' => ['class' => 'btn-group-sm'],
         '{export}',
     ],
+    'responsive'=>true,
+    'responsiveWrap' => false,
     'pjax'=>true,
     'hover'=>true,
     'striped'=>false,

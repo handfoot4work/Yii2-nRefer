@@ -38,8 +38,8 @@ echo GridView::widget([
         '{export}',
         //'{toggleData}',
     ],
-//    'responsive'=>false,
-//    'hover'=>true,
+    'responsive'=>true,
+    'responsiveWrap' => false,
     'pjax'=>false,
     'hover'=>true,
     'striped'=>false,
@@ -50,10 +50,10 @@ echo GridView::widget([
             'label'=>'เขตสุขภาพ',
             'format'=>'raw',
             'value'=> function($data) use ($date1,$date2){
+                $Lnk = 'เขตสุขภาพที่ '.($data['region']+0);
                 return (
                     $data["cases"]>0?
-                    Html::a('เขตสุขภาพที่ '.($data['region']+0),['/refer/report/sum_prov','region'=>$data['region'],'date1'=>$date1,'date2'=>$date2] ):
-                    $data['region']
+                    Html::a($Lnk,['/refer/report/sum_prov','region'=>$data['region'],'date1'=>$date1,'date2'=>$date2] ):$Lnk
                 );
             },
             'width'=>'80px',

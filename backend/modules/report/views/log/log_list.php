@@ -81,6 +81,7 @@ echo GridView::widget([
     'dataProvider'=>$dataProvider,
     'hover'=>true,
     'responsive'=>true,
+    'responsiveWrap' => false,
     'pjax'=>true,
     'pjaxSettings'=>[
         'neverTimeout'=>true,

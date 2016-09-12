@@ -50,6 +50,16 @@ $Columns =  [
             // 'lastupdate',
 
             ['class' => 'yii\grid\ActionColumn'],
+            [
+                'label'=>'secret',
+                'format'=>'raw',
+                //'attribute'=>'id',
+                'value'=>function($data) {
+                    return Html::a('<i class="fa fa-edit"> </i>',["/admin/referprovider/create-secret-key","id"=>$data["id"]]) ;
+                },
+                'headerOptions' => ['style'=>'text-align:center'],
+                'contentOptions' => ['style'=>'text-align:center;'],
+            ]
         ];
 
 echo GridView::widget([
@@ -60,7 +70,8 @@ echo GridView::widget([
          'type'=>'success',
          'before'=>'',
     ],
-    'responsive'=>false,
+    'responsive'=>true,
+    'responsiveWrap' => false,
     'headerRowOptions'=>['class'=>'text-info'],
     'containerOptions'=>['style'=>'overflow: auto'],
     'headerRowOptions'=>['class'=>'kartik-sheet-style'],
